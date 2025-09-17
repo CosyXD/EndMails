@@ -25,6 +25,6 @@ To run this project, you will need to provide your own Gmail and Gemini API keys
 ## Environmnent variables
 
 To build the project locally, you will need: 
-Google oAuth configured, the client secret, client ID.
-Clerk configured, clerk publishable and private keys
+- Google oAuth configured, the client secret, client ID.
+- Clerk configured, clerk publishable and private keys
 (as you can see, most of it's just authorization keys and used to make the app publishable.. It's best if you use the published app to avoid the hassle.
