@@ -78,7 +78,7 @@ oauthRouter.get("/callback", async (req, res) => {
       });
       console.log(`Marked user ${userId} as connected to Google`);
     } else {
-      res.redirect(`http://localhost:5173`);
+      res.redirect(process.env.FRONTEND_URL);
       console.log(`User ${userId} is already connected`);
       await clerkClient.users.updateUserMetadata(userId, {
         publicMetadata: {
@@ -89,7 +89,7 @@ oauthRouter.get("/callback", async (req, res) => {
     }
 
     // Redirect back to frontend after success
-    res.redirect(`http://localhost:5173`);
+    res.redirect(process.env.FRONTEND_URL);
   } catch (err) {
     console.error("Error exchanging code for Google tokens:", err);
     res.status(500).send("Failed to connect Google account.");
