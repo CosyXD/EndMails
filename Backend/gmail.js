@@ -214,8 +214,6 @@ async function sendMail(to, subject, text, userId) {
   }
 }
 
-listReplies("user_32MslcCwgqRtt2MgKeCLhGjNgxl");
-
 gmailRouter.get("/recents", async (req, res) => {
   const userId = req.query.userId;
   if (!userId) {
@@ -237,8 +235,6 @@ gmailRouter.get("/replies", async (req, res) => {
   }
   try {
     const messages = await listReplies(userId);
-    console.log(messages);
-
     res.json(messages);
   } catch (error) {
     console.error("Error fetching messages:", error);

@@ -23,10 +23,6 @@ const Replies = () => {
     const messages = await response.json();
     if (messages.error) {
       console.log("Error fetching replies:", messages.error);
-      const googleAuthUrl = `${BACKEND_URL}/oauth/connect?state=${encodeURIComponent(
-        user.id
-      )}`;
-      window.location.href = googleAuthUrl;
     }
     setMessages(Array.isArray(messages) ? messages : []);
   }
