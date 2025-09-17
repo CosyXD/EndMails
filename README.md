@@ -3,7 +3,7 @@
 
 A tool using Gemini and Gmail to answer emails so you can actually focus on your work.
 
-### Published Link: https://end-mails-xzny-9roni3eqb-cosyxds-projects.vercel.app/
+### Published Link: [EndMails Official Publish](https://end-mails-xzny-9roni3eqb-cosyxds-projects.vercel.app/)
 
 
 ## Features
