@@ -1,0 +1,40 @@
+# Node modules
+node_modules/
+Backend/node_modules/
+Frontend/node_modules/
+
+# Environment variables
+.env
+Backend/.env
+Frontend/.env
+
+# Logs
+*.log
+Backend/*.log
+Frontend/*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build output
+/dist
+/build
+Backend/dist
+Backend/build
+Frontend/dist
+Frontend/build
+
+# Misc
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+Backend/npm-debug.log*
+Frontend/npm-debug.log*
+Backend/yarn-debug.log*
+Frontend/yarn-debug.log*
+Backend/yarn-error.log*
+Frontend/yarn-error.log*
+
+# API keys and sensitive files
+API keys.txt
