@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 import { useLocation, useNavigate } from "react-router";
 import { useUser } from "@clerk/clerk-react";
 
@@ -17,21 +18,18 @@ const Compose = () => {
       genBox.value = "Where's my prompt?";
       return;
     }
-    const generatedReply = await fetch(
-      "http://localhost:3000/gemini/generate",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: email.content,
-          prompt: genBox.value,
-          userName: user.fullName,
-          recipientName: email.sender,
-        }),
-      }
-    );
+    const generatedReply = await fetch(`${BACKEND_URL}/gemini/generate`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: email.content,
+        prompt: genBox.value,
+        userName: user.fullName,
+        recipientName: email.sender,
+      }),
+    });
 
     const reply = await generatedReply.json();
     genBox.value = reply.text;
@@ -44,20 +42,17 @@ const Compose = () => {
       genBox.value = "Where's my prompt?";
       return;
     }
-    const generatedMail = await fetch(
-      "http://localhost:3000/gemini/generate-new",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          prompt: genBox.value,
-          userName: user.fullName,
-          recipientName: recipientNameRef.current.value,
-        }),
-      }
-    );
+    const generatedMail = await fetch(`${BACKEND_URL}/gemini/generate-new`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        prompt: genBox.value,
+        userName: user.fullName,
+        recipientName: recipientNameRef.current.value,
+      }),
+    });
 
     const mail = await generatedMail.json();
     genBox.value = mail.text;
@@ -81,7 +76,7 @@ const Compose = () => {
       genBox.value = "No reply to send! Generate one first.";
       return;
     }
-    const response = await fetch("http://localhost:3000/gmail/send", {
+    const response = await fetch(`${BACKEND_URL}/gmail/send`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

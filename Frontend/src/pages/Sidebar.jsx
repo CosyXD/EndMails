@@ -1,4 +1,5 @@
 import writeLogo from "../assets/icons/Edit_fill.svg";
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 import archiveLogo from "../assets/icons/Arhive_fill.svg";
 import messageLogo from "../assets/icons/Message_fill.svg";
 import bookLogo from "../assets/icons/Book_open_fill.svg";
@@ -48,7 +49,7 @@ const Sidebar = () => {
           <button
             className="connect-btn"
             onClick={async () => {
-              const googleAuthUrl = `http://localhost:3000/oauth/connect?state=${encodeURIComponent(
+              const googleAuthUrl = `${BACKEND_URL}/oauth/connect?state=${encodeURIComponent(
                 user.id
               )}`;
               window.location.href = googleAuthUrl;
@@ -86,19 +87,16 @@ const Sidebar = () => {
                   return;
                 }
 
-                const response = await fetch(
-                  "http://localhost:3000/gemini/connect",
-                  {
-                    method: "POST",
-                    headers: {
-                      "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify({
-                      apiKey: gemInput.current.value,
-                      userId: user.id,
-                    }),
-                  }
-                );
+                const response = await fetch(`${BACKEND_URL}/gemini/connect`, {
+                  method: "POST",
+                  headers: {
+                    "Content-Type": "application/json",
+                  },
+                  body: JSON.stringify({
+                    apiKey: gemInput.current.value,
+                    userId: user.id,
+                  }),
+                });
 
                 if (response.ok) {
                   console.log("Gemini connected successfully");

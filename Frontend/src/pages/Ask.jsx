@@ -1,4 +1,5 @@
 import { useUser } from "@clerk/clerk-react";
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 import { useRef, useState } from "react";
 
 const Ask = () => {
@@ -47,7 +48,7 @@ const Ask = () => {
     textareaRef.current.value = "";
     textareaRef.current.style.height = textareaRef.current.scrollHeight + "px";
 
-    const response = await fetch("http://localhost:3000/gemini/ask", {
+    const response = await fetch(`${BACKEND_URL}/gemini/ask`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

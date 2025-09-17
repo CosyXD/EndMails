@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 import { useUser } from "@clerk/clerk-react";
 import loadingEmails from "../assets/icons/VSlo7mYp9O.gif";
 import { useNavigate } from "react-router";
@@ -10,7 +11,7 @@ const Replies = () => {
   const { googleConnected } = user.publicMetadata;
   async function fetchReplies() {
     const response = await fetch(
-      `http://localhost:3000/gmail/replies?userId=${user.id}`,
+      `${BACKEND_URL}/gmail/replies?userId=${user.id}`,
       {
         method: "GET",
         headers: {
@@ -22,7 +23,7 @@ const Replies = () => {
     const messages = await response.json();
     if (messages.error) {
       console.log("Error fetching replies:", messages.error);
-      const googleAuthUrl = `http://localhost:3000/oauth/connect?state=${encodeURIComponent(
+      const googleAuthUrl = `${BACKEND_URL}/oauth/connect?state=${encodeURIComponent(
         user.id
       )}`;
       window.location.href = googleAuthUrl;
