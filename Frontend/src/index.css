@@ -1,0 +1,11 @@
+* {
+  margin: 0;
+  padding: 0;
+  color: #e6edf5;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  /* overflow: hidden; */
+}
+
+:root {
+  background-color: #151a20;
+}

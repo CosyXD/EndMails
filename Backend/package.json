@@ -1,0 +1,28 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@clerk/backend": "^2.10.1",
+    "@clerk/express": "^1.7.26",
+    "@google/genai": "^1.15.0",
+    "@google/generative-ai": "^0.24.1",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "googleapis": "^159.0.0",
+    "mysql2": "^3.14.3",
+    "nodemailer": "^7.0.5",
+    "nodemon": "^3.1.10"
+  }
+}

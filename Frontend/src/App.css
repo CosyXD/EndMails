@@ -1,0 +1,491 @@
+.navbar-cont {
+  padding: 1rem;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+  position: sticky;
+  top: 0;
+  background-color: #18222e9d;
+  backdrop-filter: blur(5px);
+}
+
+.logo-cont {
+  display: flex;
+  gap: 2rem;
+}
+
+.menu-ico,
+.pfp-ico {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+.logo {
+  font-family: "Ananda Black Personal Use";
+  color: #4297fb;
+}
+
+.searchbar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #41587240;
+  width: 50vw;
+  height: 3rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 5vh;
+  font-size: 1.2rem;
+}
+
+.search-ico {
+  height: 75%;
+}
+
+.pfp-cont {
+  display: flex;
+  gap: 1rem;
+  font-size: 1.2rem;
+  align-items: center;
+}
+
+.pfp-ico {
+  border-radius: 50%;
+}
+
+.horizontal-content {
+  display: flex;
+  gap: 2rem;
+}
+
+.recents-cont {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: max-content;
+  margin-right: 2vw;
+  box-sizing: border-box;
+  background-color: rgba(66, 151, 251, 0.07);
+  border-radius: 1vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/*  */
+.content-sender {
+  display: flex;
+  gap: 1rem;
+}
+
+.message {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+  border-bottom: rgb(71, 71, 71) 1px solid;
+  cursor: pointer;
+}
+
+.message h2 {
+  font-weight: 600;
+  font-size: 1rem;
+  min-width: 8rem;
+}
+
+.message p {
+  margin-top: 0.2rem;
+  font-size: 1rem;
+  width: 85%;
+}
+
+.message .date {
+  width: 4rem;
+  font-family: "JetBrains Mono", monospace;
+}
+
+/* Sidebar CSS */
+
+.sidebar-cont {
+  margin: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5vh;
+  width: 18vw;
+  padding-right: 2vw;
+  position: sticky;
+  top: 5.5rem;
+}
+
+.sidebar {
+  overflow: hidden;
+  height: max-content;
+  position: sticky;
+  top: 5.5rem;
+}
+
+.end-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  height: 9vh;
+  background-color: #4297fb;
+  outline: none;
+  border: none;
+  border-radius: 1vh;
+  margin-bottom: 2vh;
+  cursor: pointer;
+}
+
+.connect-btn {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+  height: 4vh;
+  font-size: 1.2rem;
+  text-decoration: none;
+  background-color: #d1646440;
+  padding: 1vh;
+  border-radius: 1vh;
+  border: none;
+}
+
+.btn-text {
+  font-size: 1.2rem;
+}
+
+.nav-recents,
+.nav-ask,
+.nav-replies {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.2rem;
+  text-decoration: none;
+  background-color: #41587240;
+  height: 4vh;
+  padding: 1vh;
+  border-radius: 1vh;
+  transition: all 0.3s ease;
+}
+
+.active {
+  background-color: #4297fb40;
+  transition: all 0.3s ease;
+}
+
+@starting-style {
+  .end-mail-tab,
+  .end-mail-content {
+    opacity: 0; /* Starting state for the transition */
+  }
+  .active {
+    background-color: #41587240;
+  }
+}
+
+.end-mail-tab {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* opacity: 1; */
+  top: 0;
+  left: 0;
+  flex-direction: column;
+  gap: 2vh;
+  padding: 5vh;
+  width: 100vw;
+  height: 100vh;
+  border-radius: 1vh;
+  background-color: #16202c40;
+  backdrop-filter: blur(5px);
+  z-index: 100;
+  transition: opacity 300ms ease-out;
+}
+
+.end-mail-content {
+  display: flex;
+  box-shadow: 0 0 12px 5px rgb(24, 33, 48);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translate(-5%, -5%);
+  gap: 2vh;
+  background-color: #22324b;
+  padding: 2vh;
+  border-radius: 1vh;
+  width: 60vw;
+  height: 60vh;
+}
+
+.end-mail-content textarea,
+.end-mail-content input {
+  width: 90%;
+  height: 60%;
+  border-radius: 1vh;
+  padding: 1vh;
+  font-size: 1.2rem;
+  resize: none;
+  background-color: rgba(30, 30, 50, 0.2);
+  border: none;
+  border-bottom: 2px solid #303b47;
+  outline: none;
+}
+
+.end-mail-content input {
+  width: 50%;
+  height: 5%;
+  border-radius: 1vh;
+  padding: 1vh;
+  font-size: 1rem;
+  background-color: rgba(30, 30, 50, 0.2);
+  border-bottom: 2px solid #303b47;
+  outline: none;
+}
+
+.end-mail-content button {
+  background-color: #4297fb;
+  color: white;
+  border: none;
+  border-radius: 1vh;
+  padding: 1vh 2vh;
+  font-size: 1.2rem;
+  cursor: pointer;
+  width: 25%;
+  height: 8vh;
+}
+
+.compose-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  width: 100vw;
+  height: 100vh;
+  gap: 2vh;
+}
+
+.compose-cont h1 {
+  font-weight: 600;
+}
+
+.compose-cont .sender {
+  font-size: 1.2rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.textarea-cont {
+  display: flex;
+  margin-top: 1vh;
+  gap: 5vh;
+}
+.textarea-cont textarea {
+  width: 45vw;
+  height: 50vh;
+  font-size: 1rem;
+  border-radius: 1vh;
+  padding: 1vh;
+  resize: none;
+  background: rgba(60, 68, 110, 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 1vh;
+  border: none;
+  outline: none;
+}
+
+.compose-cont .send-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 15vw;
+  height: 9vh;
+  background-color: #4297fb;
+  outline: none;
+  border: none;
+  border-radius: 1vh;
+  margin-top: 2vh;
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 0 2vh;
+}
+
+.buttons-cont {
+  display: flex;
+  gap: 4vh;
+}
+
+button {
+  transition: all 0.3s ease;
+  bottom: none;
+}
+
+.buttons-cont button:hover,
+.end-btn:hover {
+  background-color: #4caef0;
+  border: 1px solid #ebf7ff;
+}
+
+.email-input,
+.sender-input {
+  background-color: rgba(60, 68, 110, 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 1vh;
+  border: none;
+  outline: none;
+  padding: 0.5rem;
+  font-size: 1rem;
+  width: 250px;
+}
+
+.email {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  box-sizing: border-box;
+}
+
+.email-cont {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  align-items: center;
+  height: max-content;
+  padding: 2rem 5rem 5rem 5rem;
+  margin-right: 2rem;
+  box-sizing: border-box;
+  border-radius: 2vh;
+  gap: 1rem;
+  background-color: #22324b;
+  overflow: hidden;
+}
+
+.email-cont h1 {
+  font-weight: 600;
+  font-size: 1.5rem;
+  border-bottom: #ebf7ff 2px solid;
+}
+.email-cont h2 {
+  font-weight: 500;
+  font-size: 1.2rem;
+  border-bottom: #ebf7ff 2px solid;
+}
+
+/* Profile Page Styling */
+
+.profile-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  box-sizing: border-box;
+  width: 90%;
+  height: 100vh;
+  gap: 2vh;
+  color: white;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1vh;
+  margin-top: 2vh;
+  width: 50%;
+  height: 75%;
+  border-radius: 1vw;
+  padding: 2vh;
+  background-color: #22324b;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+.profile-cont h2 {
+  font-weight: 500;
+  font-size: 1.5rem;
+  margin-top: 1vh;
+  border-bottom: #ebf7ff 2px solid;
+}
+
+.logout-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 15vw;
+  height: 8vh;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: #be5454;
+  outline: none;
+  border: none;
+  border-radius: 1vh;
+  margin-top: 2vh;
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 0 2vh;
+  font-family: "JetBrains Mono", monospace;
+}
+
+.logout-btn:hover {
+  background-color: #d16464;
+  color: white;
+  border: 1px solid #ebf7ff;
+}
+
+.ask-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  box-sizing: border-box;
+  width: 90%;
+  height: 100vh;
+  gap: 2vh;
+  color: white;
+}
+
+.textarea-cont .output-area {
+  height: 50vh;
+  border-bottom: 1px solid #ebf7ff;
+  border-radius: 0;
+}
+.textarea-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  gap: 0;
+  border-radius: 1vh;
+}
+
+.textarea-cont textarea {
+  width: 100%;
+  height: 2.5rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+  font-size: 1rem;
+  padding: 1vh;
+  resize: none;
+  background: rgba(55, 91, 126, 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: none;
+  outline: none;
+  transition: all 0.3s ease;
+}
